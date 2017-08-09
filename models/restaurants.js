@@ -18,16 +18,20 @@ var restaurant = new Schema({
         type: String,
         default: true
     },
-    buildingName: {type:String},
-    buildingAddress:[],
-    pincode:{type:Number},
-    floor:{type:Number},
-    restaurantName:{type:String},
-    password:{type:String},
-    menu:[],
-    phoneNumber:{type:Number}
-    
+    buildingName: { type: String },
+    buildingAddress: { type: String },
+    pincode: { type: Number },
+    floor: { type: Number },
+    restaurantName: { type: String },
+    password: { type: String, required: 'Enter password' },
+    menu: [{
+        price: { type: Number },
+        product_name: { type: String },
+        tax: { type: String }
+    }],
+    phoneNumber: { type: Number, required: 'Enter Phone no.' }
+
 });
 
 
-module.exports = mongoose.model('restaurants', restaurants);
+module.exports = mongoose.model('restaurant', restaurant);

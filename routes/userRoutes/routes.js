@@ -14,9 +14,9 @@ var jwtVerify = require('../routes/jwtVerify')
 
 var routes = express.Router()
 
-routes.use(function(req, res, next) {
-  jwtVerify(req, res, next)
-})
+// routes.use(function(req, res, next) {
+//   jwtVerify(req, res, next)
+// })
 
 routes.get('/getAllRestaurants', function(req, res) {
   //logic to get list of all restaurants to be displayed on the main page
@@ -40,17 +40,7 @@ routes.post('/searchPastOrders', function(req, res) {
   //Logic to find past orders based on the user mobile number
 })
 
-routes.post('/getOrders', function(req, res) {
-  //Logic to get orders based on the status of order such as Active/Completed/Rejected 
-})
 
-routes.post('/modifyOrder', function(req, res) {
-  //Logic to accept or reject the order palced at a restaurant
-})
-
-routes.post('/completedOrder', function(req, res) {
-  //Logic to complete an order
-})
 
 
 module.exports = routes
